@@ -73,6 +73,16 @@ export const ServerConfig = ({
                   "Optional. The address of the server used in container links, if different than the Address.",
                 placeholder: "https://my.server.int",
               },
+              accessClientId: {
+                description:
+                  "Optional Cloudflare CF-Access-Client-Id to use while connecting",
+                placeholder: "Cloudflare CF-Access-Client-Id",
+              },
+              accessClientSecret: {
+                description:
+                  "Optional Cloudflare tunnel CF-Access-Client-Secret to use while connecting",
+                placeholder: "Cloudflare CF-Access-Client-Secret",
+              },
               region: {
                 placeholder: "Region. Optional.",
                 description:
