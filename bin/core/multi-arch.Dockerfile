@@ -9,7 +9,7 @@ ARG AARCH64_BINARIES=${BINARIES_IMAGE}-aarch64
 
 # This is required to work with COPY --from
 FROM ${X86_64_BINARIES} AS x86_64
-FROM ${AARCH64_BINARIES} AS aarch64
+#FROM ${AARCH64_BINARIES} AS aarch64
 FROM ${FRONTEND_IMAGE} AS frontend
 
 # Final Image
@@ -25,12 +25,12 @@ ARG TARGETPLATFORM
 
 # Copy both binaries initially, but only keep appropriate one for the TARGETPLATFORM.
 COPY --from=x86_64 /core /app/core/linux/amd64
-COPY --from=aarch64 /core /app/core/linux/arm64
+#COPY --from=aarch64 /core /app/core/linux/arm64
 RUN mv /app/core/${TARGETPLATFORM} /usr/local/bin/core && rm -r /app/core
 
 # Same for util
 COPY --from=x86_64 /km /app/km/linux/amd64
-COPY --from=aarch64 /km /app/km/linux/arm64
+#COPY --from=aarch64 /km /app/km/linux/arm64
 RUN mv /app/km/${TARGETPLATFORM} /usr/local/bin/km && rm -r /app/km
 
 # Copy default config / static frontend / deno binary
