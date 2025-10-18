@@ -2002,6 +2002,14 @@ export interface ServerConfig {
 	 */
 	address: string;
 	/**
+	 * Optional Cloudflare CF-Access-Client-Id to use while connecting 
+	 */
+	accessClientId?: string;
+	/**
+	 * Optional Cloudflare tunnel CF-Access-Client-Secret to use while connecting
+	 */
+	accessClientSecret?: string;
+	/**
 	 * The address to use with links for containers on the server.
 	 * If empty, will use the 'address' for links.
 	 */
