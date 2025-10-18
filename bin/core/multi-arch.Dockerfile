@@ -3,7 +3,7 @@
 ## Since theres no heavy build here, QEMU multi-arch builds are fine for this image.
 
 ARG BINARIES_IMAGE=ghcr.io/robvanoostenrijk/komodo-binaries-x86_64:latest
-ARG FRONTEND_IMAGE=ghcr.io/moghtech/komodo-frontend:latest
+ARG FRONTEND_IMAGE=ghcr.io/robvanoostenrijk/komodo-frontend:latest
 ARG X86_64_BINARIES=${BINARIES_IMAGE}
 ARG AARCH64_BINARIES=${BINARIES_IMAGE}-aarch64
 
