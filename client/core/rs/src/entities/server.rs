@@ -34,6 +34,12 @@ pub struct ServerListItemInfo {
   pub region: String,
   /// Address of the server.
   pub address: String,
+  /// Optional Cloudflare CF-Access-Client-Id to use while connecting 
+  /// If empty, header will be absent
+  pub access_client_id: String,
+  /// Optional Cloudflare CF-Access-Client-Secret to use while connecting 
+  /// If empty, header will be absent
+  pub access_client_secret: String,  
   /// External address of the server (reachable by users).
   /// Used with links.
   #[serde(default)] // API backward compat
@@ -71,6 +77,18 @@ pub struct ServerConfig {
   #[builder(default = "default_address()")]
   #[partial_default(default_address())]
   pub address: String,
+
+  /// Optional Cloudflare CF-Access-Client-Id to use while connecting 
+  /// If empty, header will be absent
+  #[serde(default)]
+  #[builder(default)]
+  pub access_client_id: String,
+
+  /// Optional Cloudflare CF-Access-Client-Secret to use while connecting 
+  /// If empty, header will be absent
+  #[serde(default)]
+  #[builder(default)]
+  pub access_client_secret: String,
 
   /// The address to use with links for containers on the server.
   /// If empty, will use the 'address' for links.
@@ -269,6 +287,8 @@ impl Default for ServerConfig {
   fn default() -> Self {
     Self {
       address: default_address(),
+      access_client_id: Default::default(),
+      access_client_secret: Default::default(),
       external_address: Default::default(),
       enabled: default_enabled(),
       timeout_seconds: default_timeout_seconds(),

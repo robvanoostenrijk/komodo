@@ -68,20 +68,20 @@ export const ServerConfig = ({
                   "The http/s address of periphery in your network, eg. https://12.34.56.78:8120",
                 placeholder: "https://12.34.56.78:8120",
               },
-              external_address: {
-                description:
-                  "Optional. The address of the server used in container links, if different than the Address.",
-                placeholder: "https://my.server.int",
-              },
-              accessClientId: {
+              access_client_id: {
                 description:
                   "Optional Cloudflare CF-Access-Client-Id to use while connecting",
                 placeholder: "Cloudflare CF-Access-Client-Id",
               },
-              accessClientSecret: {
+              access_client_secret: {
                 description:
                   "Optional Cloudflare tunnel CF-Access-Client-Secret to use while connecting",
                 placeholder: "Cloudflare CF-Access-Client-Secret",
+              },
+              external_address: {
+                description:
+                  "Optional. The address of the server used in container links, if different than the Address.",
+                placeholder: "https://my.server.int",
               },
               region: {
                 placeholder: "Region. Optional.",
