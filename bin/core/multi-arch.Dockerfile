@@ -4,7 +4,7 @@
 
 ARG BINARIES_IMAGE=ghcr.io/robvanoostenrijk/komodo-binaries-x86_64:latest
 ARG FRONTEND_IMAGE=ghcr.io/moghtech/komodo-frontend:latest
-ARG X86_64_BINARIES=${BINARIES_IMAGE}-x86_64
+ARG X86_64_BINARIES=${BINARIES_IMAGE}
 ARG AARCH64_BINARIES=${BINARIES_IMAGE}-aarch64
 
 # This is required to work with COPY --from
