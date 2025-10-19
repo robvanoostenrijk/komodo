@@ -80,16 +80,14 @@ pub struct ServerConfig {
 
   /// Optional Cloudflare CF-Access-Client-Id to use while connecting 
   /// If empty, header will be absent
-  #[serde(default)]
+  #[serde(default, deserialize_with = "string_list_deserializer")]
+  #[partial_attr(serde(
+    default,
+    deserialize_with = "option_string_list_deserializer"
+  ))]
   #[builder(default)]
-  pub access_client_id: String,
-
-  /// Optional Cloudflare CF-Access-Client-Secret to use while connecting 
-  /// If empty, header will be absent
-  #[serde(default)]
-  #[builder(default)]
-  pub access_client_secret: String,
-
+  pub request_headers: Vec<String>,
+  
   /// The address to use with links for containers on the server.
   /// If empty, will use the 'address' for links.
   #[serde(default)]
@@ -287,8 +285,7 @@ impl Default for ServerConfig {
   fn default() -> Self {
     Self {
       address: default_address(),
-      access_client_id: Default::default(),
-      access_client_secret: Default::default(),
+      request_headers: Default::default(),
       external_address: Default::default(),
       enabled: default_enabled(),
       timeout_seconds: default_timeout_seconds(),

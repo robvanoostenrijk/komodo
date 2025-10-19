@@ -68,16 +68,6 @@ export const ServerConfig = ({
                   "The http/s address of periphery in your network, eg. https://12.34.56.78:8120",
                 placeholder: "https://12.34.56.78:8120",
               },
-              access_client_id: {
-                description:
-                  "Optional Cloudflare CF-Access-Client-Id to use while connecting",
-                placeholder: "Cloudflare CF-Access-Client-Id",
-              },
-              access_client_secret: {
-                description:
-                  "Optional Cloudflare tunnel CF-Access-Client-Secret to use while connecting",
-                placeholder: "Cloudflare CF-Access-Client-Secret",
-              },
               external_address: {
                 description:
                   "Optional. The address of the server used in container links, if different than the Address.",
@@ -88,6 +78,23 @@ export const ServerConfig = ({
                 description:
                   "Attach a region to the server for visual grouping.",
               },
+            },
+          },
+          {
+            label: "Request Headers",
+            labelHidden: true,
+            components: {
+              request_headers: (values, set) => (
+                <ConfigList
+                  description="Additional request headers to add to periphery HTTP requests"
+                  label="Request Headers"
+                  field="request_headers"
+                  values={values ?? []}
+                  set={set}
+                  disabled={disabled}
+                  placeholder="CF-Access-Client-Id: xxxx"
+                />
+              ),
             },
           },
           {
