@@ -25,7 +25,7 @@ fn periphery_http_client() -> &'static reqwest::Client {
 pub struct PeripheryClient {
   address: String,
   passkey: String,
-  headers: String[],
+  headers: Vec<String>,
   timeout: Duration,
 }
 
@@ -33,13 +33,13 @@ impl PeripheryClient {
   pub fn new(
     address: impl Into<String>,
     passkey: impl Into<String>,
-    headers: impl Into<String[]>,
+    headers: impl Into<Vec<String>>,
     timeout: impl Into<Duration>,
   ) -> PeripheryClient {
     PeripheryClient {
       address: address.into(),
       passkey: passkey.into(),
-      headers: headers.into().
+      headers: headers.into(),
       timeout: timeout.into(),
     }
   }
