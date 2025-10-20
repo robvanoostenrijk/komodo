@@ -3837,14 +3837,6 @@ export interface ServerListItemInfo {
     region: string;
     /** Address of the server. */
     address: string;
-	/**
-	 * Optional Cloudflare CF-Access-Client-Id to use while connecting 
-	 */
-	access_client_id?: string;
-	/**
-	 * Optional Cloudflare tunnel CF-Access-Client-Secret to use while connecting
-	 */
-	access_client_secret?: string;
     /**
      * External address of the server (reachable by users).
      * Used with links.

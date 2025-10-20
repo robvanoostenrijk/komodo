@@ -75,8 +75,7 @@ impl super::KomodoResource for Server {
           .unwrap_or(String::from("Unknown")),
         region: server.config.region,
         address: server.config.address,
-        access_client_id: server.config.access_client_id,
-        access_client_secret: server.config.access_client_secret,
+        request_headers: server.config.request_headers,
         external_address: server.config.external_address,
         send_unreachable_alerts: server
           .config

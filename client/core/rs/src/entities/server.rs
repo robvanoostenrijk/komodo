@@ -34,12 +34,6 @@ pub struct ServerListItemInfo {
   pub region: String,
   /// Address of the server.
   pub address: String,
-  /// Optional Cloudflare CF-Access-Client-Id to use while connecting 
-  /// If empty, header will be absent
-  pub access_client_id: String,
-  /// Optional Cloudflare CF-Access-Client-Secret to use while connecting 
-  /// If empty, header will be absent
-  pub access_client_secret: String,  
   /// External address of the server (reachable by users).
   /// Used with links.
   #[serde(default)] // API backward compat
