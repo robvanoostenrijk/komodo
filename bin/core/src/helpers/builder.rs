@@ -54,7 +54,7 @@ pub async fn get_builder_periphery(
         } else {
           config.passkey
         },
-        config.request_headers,
+        config.request,
         Duration::from_secs(3),
       );
       periphery

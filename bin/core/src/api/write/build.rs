@@ -431,7 +431,7 @@ async fn get_on_host_periphery(
       let periphery = PeripheryClient::new(
         config.address,
         config.passkey,
-        config.request_headers,
+        config.headers,
         Duration::from_secs(3),
       );
       periphery.health_check().await?;
