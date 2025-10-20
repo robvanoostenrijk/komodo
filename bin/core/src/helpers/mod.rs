@@ -199,6 +199,7 @@ pub fn periphery_client(
     } else {
       &server.config.passkey
     },
+    &server.config.request_headers,
     Duration::from_secs(server.config.timeout_seconds as u64),
   );
 

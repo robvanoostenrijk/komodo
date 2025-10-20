@@ -54,6 +54,7 @@ pub async fn get_builder_periphery(
         } else {
           config.passkey
         },
+        config.request_headers,
         Duration::from_secs(3),
       );
       periphery
@@ -111,6 +112,7 @@ async fn get_aws_builder(
   let periphery = PeripheryClient::new(
     &periphery_address,
     &core_config().passkey,
+    [],
     Duration::from_secs(3),
   );
 

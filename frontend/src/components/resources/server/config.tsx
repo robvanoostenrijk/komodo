@@ -81,13 +81,13 @@ export const ServerConfig = ({
             },
           },
           {
-            label: "Request Headers",
+            label: "Headers",
             labelHidden: true,
             components: {
               request_headers: (values, set) => (
                 <ConfigList
                   description="Additional request headers to add to periphery HTTP requests"
-                  label="Request Headers"
+                  label="Headers"
                   field="request_headers"
                   values={values ?? []}
                   set={set}
