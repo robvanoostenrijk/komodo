@@ -7979,6 +7979,8 @@ export interface UrlBuilderConfig {
     address: string;
     /** A custom passkey to use. Otherwise, use the default passkey. */
     passkey?: string;
+    /** Optional request headers to include */
+    headers?: Vec<String>;
 }
 /** Update dockerfile contents in Files on Server or Git Repo mode. Response: [Update]. */
 export interface WriteBuildFileContents {

@@ -8442,6 +8442,8 @@ export interface UrlBuilderConfig {
 	address: string;
 	/** A custom passkey to use. Otherwise, use the default passkey. */
 	passkey?: string;
+	/** Optional HTTP headers to include on request */
+	headers?: Vec<string>;
 }
 
 /** Update dockerfile contents in Files on Server or Git Repo mode. Response: [Update]. */
